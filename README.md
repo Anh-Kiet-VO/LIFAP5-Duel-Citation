@@ -1,5 +1,9 @@
 # LIFAP5 - Projet
 
+## Étudiants
+
+* Anh-Kiet VO (p1907921 - anh-kiet.vo@etu.univ-lyon1.fr)
+
 ## Fonctionnalités
 
 * [x] Affichage de l’ensemble des citations du serveur (2 points)
