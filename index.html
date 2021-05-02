@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>Duels de citations</title>
+    <link rel="stylesheet" href="bulma.min.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <nav class="navbar" id="nav" role="navigation" aria-label="main navigation">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a id="btn-open-login-modal" class="button is-light">
+              Utilisateur
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <h1 class="title">Duels de citations</h1>
+        <p class="subtitle">Quelle est votre citation favorite ?</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="tabs is-centered">
+        <ul>
+          <li class="is-active" id="tab-duel">
+            <a>Voter</a>
+          </li>
+          <li id="tab-tout"><a>Toutes les citations</a></li>
+          <li id="tab-quote"><a>Ajouter une citation</a></li>
+        </ul>
+      </div>
+      <div class="columns" id="div-duel">
+        <div class="column">
+          <div class="card">
+            <div class="columns card-content">
+              <div class="column is-one-third">
+                <div class="card-image">
+                  <figure class="image">
+                    <img
+                      
+                    />
+                  </figure>
+                </div>
+              </div>
+              <div class="column is-8">
+                <p class="title"></p>
+                <p class="subtitle"></p>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="columns is-centered">
+                <p class="button is-danger" onclick="vote(1)">
+                  Voter pour la citation de gauche !
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="columns card-content">
+              <div class="column is-8">
+                <p class="title">
+                </p>
+                <p class="subtitle"></p>
+              </div>
+              <div class="column is-one-third">
+                <div class="card-image">
+                  <figure class="image">
+                    <img
+                      
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="columns is-centered">
+                <p class="button is-info" onclick="vote(2)">Voter pour la citation de droite !</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="div-tout">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Classement</th>
+              <th>Personnage</th>
+              <th>Citation</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="div-quote" class="columns is-centered">
+        <div class="box column is-half">
+          <label class="label">Citation</label>
+          <input id="quote" class="input is-primary" type="text" placeholder="Des héros, il y en a plein les cimetières. On n'est pas des héros.">
+          <span id="errCitation" class="help is-danger"></span>
+
+          <label class="label">Personnage</label>
+          <input id="character" class="input is-primary" type="text" placeholder="Julien B.">
+          <span id="errCharacter" class="help is-danger"></span>
+
+
+          <label class="label">Image</label>
+          <input id="image" class="input is-primary" type="text" placeholder="https://bit.ly/3eg9J1f">
+          <span id="errImage" class="help is-danger"></span>
+
+          <label class="label">Direction</label>
+          <input id="direction" class="input is-primary" type="text" placeholder="Right / Left">
+          <span id="errDirection" class="help is-danger"></span>
+
+          <label class="label">Origine</label>
+          <input id="origine" class="input is-primary" type="text" placeholder="Interview Brut">
+          <span id="errOrigine" class="help is-danger"></span>
+
+          <span id="quoteOK" class="help is-danger"></span>
+          <div class="buttons is-centered">
+            <button class="button is-primary" onclick="newQuote()">Ajouter</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <div id="mdl-login" class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Utilisateur</p>
+          <button
+            id="btn-close-login-modal1"
+            class="delete"
+            aria-label="close"
+          ></button>
+        </header>
+        <section class="modal-card-body">
+          <p id="elt-affichage-login">
+            <label class="label">Clé API</label>        
+            <input id="apiKey" type="password" placeholder="Rentrez clé API" class="input"><br>
+            <span id="err" class="help is-danger"></span>
+          </p>
+        </section>
+        <footer class="modal-card-foot" id="footer" style="justify-content: flex-end">
+          <div id="btn-close-login-modal2"></div>
+          <button id="btn-connect" class="button is-success" onclick="lanceWhoamiEtInsereLogin()">Se connecter</button>
+        </footer>
+      </div>
+    </div>
+    <script src="client.js"></script>
+  </body>
+</html>
